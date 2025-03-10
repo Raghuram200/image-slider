@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background:linear-gradient(darkblue,black);
+            padding: 120px;
+            margin-left: 400px;
+            margin-top: 300px;
+        }
+        .slide{
+            border-radius: 10px;
+            border: 20px ridge royalblue;
+            border-radius: 10px;
+            width: 500px;
+            background-color:cadetblue;
+            box-shadow: 0 0 60px darkorchid;
+
+        }
+        button{
+            padding: 15px;
+            background-color: indigo;
+            color: white;
+            border-radius: 13px;
+            width: 140px;
+            text-transform: uppercase;
+            font-size: x-large;
+            font-weight: bolder;
+            text-shadow: 0 0 20px white;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="slide">
+        <div class="box">
+        <img src="im.jpeg" alt="" class="hello" width="500px">
+        </div>
+        <button  onclick="prev()">prev</button>
+        <button  onclick="next()">next</button>
+    </div>
+
+    <script>
+        var slide=document.querySelector('.hello')
+        var photo=['aa.jpg','scare.jpg','harry.jpg','im.jpeg','sun.jpg','sunfire.jpg']
+        var a=0
+        function prev(){
+            if(a<=0)a=photo.length
+            a--
+            return slide.setAttribute('src','' +photo[a])
+        }
+        function next(){
+            if(a>=photo.length-1)a=-1
+            a++
+            return slide.setAttribute('src','' +photo[a])
+            
+        }
+      
+    </script>
+</body>
+</html>
